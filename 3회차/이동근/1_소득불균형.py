@@ -1,3 +1,13 @@
-import sys
+# import sys
 
-sys.stdin = open("_소득불균형.txt")
+# sys.stdin = open("_소득불균형.txt")
+T = int(input())
+
+for i in range(T):
+    N = int(input())
+
+    income_list = list(map(int, input().split()))
+    mean = sum(income_list) // len(income_list)
+    result = list(filter(lambda x: x <= mean, income_list))
+
+    print(f"#{i + 1}", len(result))
